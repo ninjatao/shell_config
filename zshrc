@@ -6,7 +6,7 @@ export ANDROID_HOME=$ANDROID_SDK_ROOT
 export DYLD_LIBRARY_PATH="/usr/local/lib:$DYLD_LIBRARY_PATH"
 export PATH="$ANDROID_NDK_ROOT:$ANDROID_SDK_ROOT/platform-tools/:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="/usr/local/sbin:/usr/local/bin/:~/agora/media_sdk_script/build_system/gn/bin/mac/:$PATH"
+export PATH="/usr/local/sbin:~/agora/media_sdk_script/build_system/gn/bin/mac/:$PATH"
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
@@ -124,6 +124,7 @@ source $ZSH/oh-my-zsh.sh
 alias proxy='export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890'
 alias unproxy='unset all_proxy;unset https_proxy;unset http_proxy'
 alias vim='nvim'
+alias gdu='gdu-go'
 # add agora aclient auto completion script
 fpath=("/Users/duantao/agora/media_sdk_script/build_system/zsh" $fpath)
 
@@ -150,3 +151,4 @@ fi
 
 mamba activate python310
 eval $(thefuck --alias)
+ulimit -n 2048 # allow open more files
